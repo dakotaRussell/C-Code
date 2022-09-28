@@ -1,0 +1,19 @@
+Author: Dakota Dehn
+Lab Section: Noon
+
+Dr. Smith's provided code limits the program from sending the same packet 10 times 
+consecutively, not 10 times absolutely over the course of the program. With the case of 
+sending the EOF packet from the server, it is limited to sending 10 times consecutively.
+When processing to confirm that the client has ACK'ed any data preceding EOF, the 
+retryCount of ten is reset if an ACK is received. 
+
+To limit the sending of EOF to ten times absolutely over the course of the program requirescommenting out one line of code. However doing so with higher error percentage gurantees a timeout rather than a complete file transfer.
+
+
+Additional Flags:
+FILENAME_TRANS 6
+FNAME_BAD 8
+FNAME_OK 9
+FILENAME_ACK_ACK 7
+END_OF_FILE 10
+
